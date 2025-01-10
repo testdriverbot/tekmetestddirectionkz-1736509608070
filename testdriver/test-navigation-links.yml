@@ -1,0 +1,24 @@
+version: 4.1.35
+steps:
+  - prompt: Click on "О нас" in the navigation bar.
+    commands:
+      - command: hover-text
+        text: О нас
+        description: about us link in the navigation bar
+        action: click
+  - prompt: Assert that the corresponding page is displayed with correct content.
+    commands:
+      - command: assert
+        expect: the page contains the heading "О нас"
+  - prompt: Click on "Для врачей" in the navigation bar.
+    commands:
+      - command: hover-text
+        text: Для врачей
+        description: for doctors link in the navigation bar
+        action: click
+  - prompt: >-
+      Assert that the corresponding page is displayed without errors.  # Use the
+      content of the file from the environment
+    commands:
+      - command: assert
+        expect: the page contains the heading "Для врачей"
