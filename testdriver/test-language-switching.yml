@@ -1,0 +1,20 @@
+version: 4.1.35
+steps:
+  - prompt: Locate the language switcher on the page.
+    commands:
+      - command: hover-text
+        text: РУС
+        description: language switcher in the top right corner
+        action: hover
+  - prompt: Switch the language from Russian to English.
+    commands:
+      - command: hover-text
+        text: English
+        description: English option in the language switcher dropdown
+        action: click
+  - prompt: >-
+      Assert that the page content is translated correctly.  # Use the content
+      of the file from the environment
+    commands:
+      - command: assert
+        expect: The best doctors for your health is visible
