@@ -1,0 +1,23 @@
+version: 4.1.35
+steps:
+  - prompt: Identify the main call to action button on the page.
+    commands:
+      - command: hover-text
+        text: Как это работает
+        description: first button on the page
+        action: hover
+  - prompt: Identify the main call to action button on the page.
+    commands:
+      - command: hover-text
+        text: Преимущества
+        description: second button on the page
+        action: hover
+      - command: hover-text
+        text: Список врачей
+        description: third button on the page
+        action: hover
+  - prompt: Identify the main call to action button on the page.
+    commands:
+      - command: scroll-until-text
+        text: Зарегистрироваться
+        direction: down
