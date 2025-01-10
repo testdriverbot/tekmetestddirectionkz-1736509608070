@@ -1,0 +1,26 @@
+version: 4.1.35
+steps:
+  - prompt: Locate the "Contact Us" link in the navigation bar.
+    commands:
+      - command: hover-text
+        text: Контакты
+        description: contact us link in the navigation bar
+        action: click
+  - prompt: Click the "Contact Us" link.
+    commands:
+      - command: hover-text
+        text: Контакты
+        description: contact us link in the navigation bar
+        action: click
+  - prompt: Assert that the contact page is displayed.
+    commands:
+      - command: assert
+        expect: the contact page is displayed with the heading "Контакты"
+  - prompt: >-
+      Assert that the contact information is correct.  # Use the content of the
+      file from the environment
+    commands:
+      - command: assert
+        expect: >-
+          the contact page displays phone +7 (771) 533-81-56, email
+          tekme@service.kz, and address г. Астана, Пр.Мангилик Ел, зд. 20
